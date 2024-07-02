@@ -36,6 +36,19 @@ nav ul a{
 nav ul li :hover{
     border-bottom: 3px solid #790808;
 }
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.username {
+  font-weight: bold;
+  color: #790808; /* Change to desired color */
+  margin-left: 0.5rem; /* Space between 'Welcome,' and the username */
+}
 .container{
     height:600px;
     padding: 20px;

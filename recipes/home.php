@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-Q85NdaAqymN/xbzQypHrKE7vLW2gzEjubsKvLIwnUVC4qNBBDxjtQ7uDdtzSUihOJeaiXtXmHg5f5aCqexCkHCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <?php
+    // Generate a cache buster using the current timestamp
+    $cacheBuster = time();
+    ?>
+    <link rel="stylesheet" href="style.css?v=<?php echo $cacheBuster; ?>">
     <title>HomePage</title>
     </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="myrecipebook.html">Recipes</a></li>
-                <li><a href="#about-us">About Us</a></li>
-                <li><a href="login.html">Log In</a></li>
-            </ul>
-            <h1 class="logo"><img id="logo-image" src="whisk-and-bowl.png" alt="logo-image">Whisk</h1>
-        </nav>
+        <?php include 'header.php'?>
     </header>
      <main>
         <div class="container">
-         <img src="lily-banse--YHSwy6uqvk-unsplash.jpg" alt="hero-image">
+         <img src="images/lily-banse--YHSwy6uqvk-unsplash.jpg" alt="hero-image">
          <div class="hero-text">
          <h1>Cook What You Crave</h1>
          <p> Find recipes tailored to your dietary needs and preferred ingredients, creating meals you'll love.</p>
@@ -38,7 +33,7 @@
                 <p>We created Whisk because we know navigating the world of recipes can be overwhelming.<br> Our website is designed to simplify your meal planning and 
                     cooking experience.<br> We offer a curated selection of recipes from various cuisines and dietary needs, along with clear instructions and helpful tools to ensure success in the kitchen.</p>
              </div>
-             <img src="alyson-mcphee-yWG-ndhxvqY-unsplash.jpg" alt="about-us image">
+             <img src="images/alyson-mcphee-yWG-ndhxvqY-unsplash.jpg" alt="about-us image">
           </div>
           </section>
           <!-- Benefits Section -->
@@ -96,19 +91,19 @@
             <h2>Why Choose Us? </h2>
             <div class="indicator-cards">
               <div class="indicator-card">
-                <img src="360_F_635201516_G2TFpFPoFA6utXYNgFlgPJGwU24mj6CJ.jpg" alt="Customer 1 image">
+                <img src="images/360_F_635201516_G2TFpFPoFA6utXYNgFlgPJGwU24mj6CJ.jpg" alt="Customer 1 image">
                 <h3>Sarah Jones</h3>
                 <p>"Whisk has been a lifesaver for me!<br> I love the variety of recipes and the easy-to-follow instructions.
                   I've never felt so confident in the kitchen."</p>
               </div>
               <div class="indicator-card">
-                <img src="360_F_646488127_8rHBLR3ln8YoELqitzdcAReAbsPhZpHs.jpg" alt="Customer 2 image">
+                <img src="images/360_F_646488127_8rHBLR3ln8YoELqitzdcAReAbsPhZpHs.jpg" alt="Customer 2 image">
                 <h3>David Otieno</h3>
                 <p>"I've learned so much about cooking from Whisk. The personalized meal planning feature is a game-changer for me and my family.<br>
                      We're always trying new and delicious recipes."</p>
               </div>
               <div class="indicator-card ">
-                <img src="socialmedia-1-1024x512.jpg" alt="social media">
+                <img src="images/socialmedia-1-1024x512.jpg" alt="social media">
                 <h3>100,000 Shares</h3>
                 <p>Shared across Social Media Platforms</p>
               </div>

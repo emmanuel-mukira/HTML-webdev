@@ -1,11 +1,14 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Fname = $_POST['Fname'];
     $Lname = $_POST['Lname'];
     $UserType = $_POST['UserType'];
-    $UserName = $_POST['UserName'];
+    $Email = $_POST['Email'];
     $Passwords = password_hash($_POST['Passwords'], PASSWORD_DEFAULT);
     $UserImage = $_FILES['UserImage']['name'];
     $target_dir = "uploads/";
@@ -13,14 +16,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Move the uploaded file to the target directory
     if (move_uploaded_file($_FILES['UserImage']['tmp_name'], $target_file)) {
-        
-        // Insert user data into the database
-        $sql = "INSERT INTO Users (Fname, Lname, UserType, UserImage, UserName, Passwords) VALUES ('$Fname', '$Lname', '$UserType', '$target_file', '$UserName', '$Passwords')";
-        
-        if ($conn->query($sql) === TRUE) {
-            echo "New user registered successfully";
+        // Fetch the UserTypeID based on the selected UserType
+        $stmt = $conn->prepare("SELECT UserTypeID FROM UserType WHERE UserGroup = ?");
+        $stmt->bind_param("s", $UserType);
+        $stmt->execute();
+        $stmt->bind_result($UserTypeID);
+        $stmt->fetch();
+        $stmt->close();
+
+        if ($UserTypeID) {
+            // Insert user data into the database
+            $stmt = $conn->prepare("INSERT INTO Users (Fname, Lname, UserTypeID, UserImage, Email, Passwords) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssisss", $Fname, $Lname, $UserTypeID, $target_file, $Email, $Passwords);
+
+            if ($stmt->execute()) {
+                echo "New user registered successfully";
+
+                // Redirect to login.php
+                header("Location: login.php");
+                exit();
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+
+            $stmt->close();
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Invalid user type selected.";
         }
 
         $conn->close();
@@ -28,4 +49,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-
+?>

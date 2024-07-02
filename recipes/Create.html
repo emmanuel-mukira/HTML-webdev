@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .card {
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h2 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" onclick="goToAddRecipe()">
+        <h2>Add Recipe</h2>
+    </div>
+    <div class="card" onclick="goToAddCategory()">
+        <h2>Add Category</h2>
+    </div>
+
+    <script>
+        function goToAddRecipe() {
+            window.location.href = "add_recipe.php";
+        }
+
+        function goToAddCategory() {
+            window.location.href = "add_category.php";
+        }
+    </script>
+</body>
+</html>
