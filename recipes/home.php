@@ -11,9 +11,7 @@
     <title>HomePage</title>
     </head>
 <body>
-    <header>
-        <?php include 'header.php'?>
-    </header>
+      <?php include 'header.php'?>
      <main>
         <div class="container">
          <img src="images/lily-banse--YHSwy6uqvk-unsplash.jpg" alt="hero-image">

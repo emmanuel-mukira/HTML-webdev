@@ -12,6 +12,8 @@ if (!isset($_SESSION['user_id'])) {
 // Include database connection file
 require 'db_connect.php';
 
+include 'header.php';
+
 // Fetch user's first name from the database
 $userID = $_SESSION['user_id'];
 $userSql = "SELECT Fname FROM Users WHERE UserID = ?";
@@ -52,10 +54,15 @@ echo '<!DOCTYPE html>
         // Display recipes in card format
         while ($row = $result->fetch_assoc()) {
             echo '<div class="recipe-card">';
+            echo '<a href="recipe_details.php?id=' . $row['RecipeID'] . '">';
+            
+            // Add edit link for each recipe
+                
             echo '<div class="recipe-image">';
             echo '<img src="' . htmlspecialchars($row['RecipeImage']) . '" alt="' . htmlspecialchars($row['RecipeName']) . '">';
             echo '</div>';
             echo '<h2 class="recipe-name">' . htmlspecialchars($row['RecipeName']) . '</h2>';
+            echo '</a>';
             echo '</div>';
         }
     } else {

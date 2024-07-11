@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "New user registered successfully";
 
                 // Redirect to login.php
-                header("Location: login.php");
+                header("Location: login.html");
                 exit();
             } else {
                 echo "Error: " . $stmt->error;

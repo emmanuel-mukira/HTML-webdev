@@ -1,0 +1,98 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Recipe Cards */
+.recipe-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.recipe-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-card h3 {
+    margin: 15px 0;
+}
+
+/* Recipe Details */
+.recipe-details {
+    width: 70%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-details h1 {
+    margin-bottom: 20px;
+}
+
+.recipe-details img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.recipe-details h2 {
+    margin-top: 20px;
+}
+
+.recipe-details p {
+    margin-bottom: 20px;
+}
+.recipe-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.recipe-actions .edit-recipe,
+.recipe-actions .delete-recipe {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.recipe-actions .edit-recipe {
+    background-color: #28a745; /* Green */
+}
+
+.recipe-actions .delete-recipe {
+    background-color: #dc3545; /* Red */
+}

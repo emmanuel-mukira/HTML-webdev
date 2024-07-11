@@ -8,7 +8,7 @@
     // Generate a cache buster using the current timestamp
     $cacheBuster = time();
     ?>
-    <link rel="stylesheet" href="style.css?v=<?php echo $cacheBuster; ?>">
+    <link rel="stylesheet" href="header.css?v=<?php echo $cacheBuster; ?>">
     <title>Your Website Title</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
         <nav>
             <ul>
                 <li><a href="home.php">Home</a></li>
-                <li><a href="myrecipebook.html">Recipes</a></li>
+                <li><a href="recipes.php">Recipes</a></li>
                 <li><a href="display_users.php">Users</a></li>
                 <li><a href="Create.html">Create</a></li>
                 <li><a href="dashboard.php">Dashboard</a></li>

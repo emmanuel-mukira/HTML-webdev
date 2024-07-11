@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="show_users.css?v=<?php echo $cacheBuster; ?>">
     <title>Display Users</title>
 </head>
+ <?php include 'header.php'?>
 <body>
     <h1>Users</h1>
     
@@ -56,7 +57,7 @@
     ";
 
     $result = $conn->query($sql);
-
+    
     if ($result->num_rows > 0) {
         echo '<table>';
         echo '
