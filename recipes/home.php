@@ -19,7 +19,7 @@
          <h1>Cook What You Crave</h1>
          <p> Find recipes tailored to your dietary needs and preferred ingredients, creating meals you'll love.</p>
          <div id="link">
-         <a href="myrecipebook.html">Explore Now</a>
+         <a href="recipes.php">Explore Now</a>
          </div>
          </div>
         </div>
