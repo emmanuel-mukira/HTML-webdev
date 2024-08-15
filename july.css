@@ -1,0 +1,47 @@
+/* All paragraphs have a solid black border with a thickness of 2px */
+p {
+    border: 2px solid black;
+    margin: 0; /* To remove default margins */
+    padding: 5px; /* For some spacing inside the border */
+}
+
+div {
+    border: 2px dashed black;
+    margin: 5px 0; /* For some vertical spacing between divs */
+    padding: 15px; /* For some spacing inside the border */
+    margin-top:15px;
+}
+
+/* All div tags that are children of the body tag float to the right */
+body > div {
+    float: right;
+}
+
+/* The elements with "one", "two", "two two" have a background color of cyan and aligns text to the right */
+div > div {
+    background-color: cyan;
+    text-align: right;
+}
+
+/* The elements with "two" and "two two" are underlined */
+#div {
+    text-decoration: underline;
+}
+
+/* The element with "four four four four" has a solid black border, 4px thick */
+ span.div {
+    border: 4px solid black;
+    display: inline-block; /* To make the border wrap around the text */
+    margin-top: 5px; /* For some spacing above the span */
+}
+
+
+.div {
+    width: 200px; /* Approximate width for the floating divs */
+}
+
+div+p{
+    bottom:0;
+    position: fixed;
+    width:97%;
+}

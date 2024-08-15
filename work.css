@@ -1,0 +1,33 @@
+/* Container for the content section */
+.content_section{
+ display: flex;
+ padding:20px;
+}
+.row{
+  display:flex;
+}
+.content{
+  flex:1;
+
+}
+.sidebar{
+  flex:1;
+  padding-left: 30px;
+}
+
+.footer {
+  width:100%;
+  text-align: center;
+  background-color: grey;
+  padding:20px;
+  bottom:0;
+  position: fixed;
+}
+
+ul li:first-child{
+ font-weight: bold;
+}
+
+ul li:not(:first-child){
+ font-style: italic;
+}
